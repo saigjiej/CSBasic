@@ -27,6 +27,11 @@ namespace CSBasic3
                 Console.Write("입력(종료:exit):");
                 input = Console.ReadLine();
             } while (input != "exit");
+
+            for(int j = '가'; j <= '힣'; j++)
+            {
+                Console.Write((char)j);
+            }
         }
     }
 }
