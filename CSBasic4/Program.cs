@@ -6,9 +6,21 @@ using System.Threading.Tasks;
 
 namespace CSBasic4
 {
+    class MyMath
+    {
+        int somenumber = 42;
+        public static double PI = 3.141592;
+        public static void Greeting()
+        {
+            //Console.WriteLine(somenumber);
+            Console.WriteLine("Greeting!");
+        }
+    }
+
     /*class Math
     {
     }*/
+
     class Car
     {
         int carNumber;
@@ -42,7 +54,7 @@ namespace CSBasic4
             Random random = new Random();
             Console.WriteLine(random.Next());
             Console.WriteLine(random.Next(100));
-            Console.WriteLine(random.Next(10, 19));
+            Console.WriteLine(random.Next(1, 19));
             Console.WriteLine(random.NextDouble());
             Console.WriteLine(random.NextDouble());
             Console.WriteLine(random.NextDouble());
@@ -59,7 +71,7 @@ namespace CSBasic4
             foreach (var item in list)
             {
                 Console.WriteLine("Count: " + list.Count + "\titem: " + item);
-                list.Remove(item);
+                /*list.Remove(item);*/
             }
 
             Console.WriteLine(Math.Abs(-52273));
@@ -69,6 +81,19 @@ namespace CSBasic4
             Console.WriteLine(Math.Round(52.563));
             Console.WriteLine(Math.Max(52, 273));
             Console.WriteLine(Math.Min(52, 274));
+
+            Product product = new Product();
+            product.name = "감자";
+            product.price = 2000;
+
+            Console.WriteLine(product.name + " : " + product.price + "원");
+
+            Product productA = new Product() { name = "짜장면", price = 5500 };
+            Product productB = new Product() { name = "짬뽕", price = 5500 };
+            Product productC = new Product() { name ="탕수육" };
+            Product productD = new Product() { price=99999999 };
+            Product productE = new Product() { price = 30000 , name = "양장피"};
         }
+        
     }
 }
