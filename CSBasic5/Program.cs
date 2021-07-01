@@ -8,7 +8,31 @@ namespace CSBasic5
 {
     class Program
     {
-        // 외부에 클래스를 만들 수 있음 (내부인지 외부인지 확인)
+        public int instanceVariable = 10;
+        public int instanceMethod()
+        {
+            return 0;
+        }
+
+        class MyMath
+        {
+            public static int Abs(int input)
+            {
+                return (input < 0) ? -input : input;
+                /*
+                if(input < 0)
+                {
+                    return -input;
+                }
+                else
+                {
+                    return input;
+                }
+                */
+            }
+
+        }
+
         class Test
         {
             // 내부 클래스
@@ -53,6 +77,17 @@ namespace CSBasic5
 
             Test test = new Test();
             Console.WriteLine(test.Sum(1, 100));
+
+            Console.WriteLine(MyMath.Abs(52));
+            Console.WriteLine(MyMath.Abs(-273));
+
+            // 클래스 메서드에서는 인스턴스 변수메서드 접근 불가!
+            // 객체를 만들어 접근해야한다.
+            //Console.WriteLine(instanceVariable);
+            //instanceMethod();
+            Program p = new Program();
+            Console.WriteLine(p.instanceVariable);
+            p.instanceMethod();
         }
     }
 }
