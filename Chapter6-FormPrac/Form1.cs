@@ -45,5 +45,18 @@ namespace Chapter6_FormPrac
                     break;
             }
         }
+
+        private void btnModeless_Click(object sender, EventArgs e)
+        {
+            Form form = new FormCustom();
+            if(sender == btnModeless)
+            {
+                form.Show();
+            }
+            else if(sender == btnModel)
+            {
+                form.ShowDialog();
+            }
+        }
     }
 }
